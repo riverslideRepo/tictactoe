@@ -23,7 +23,7 @@ header{
     flex-direction: column;
     z-index:500;
     overflow: hidden;
-    transition:height 0.3s 0.5s;
+    transition:height 0.3s 0.3s;
 
     perspective:100px;
     perspective-origin: bottom center;
@@ -55,7 +55,8 @@ header #menu_icon{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap:4px;
 
     transition:background-color 0.2s;
 }
@@ -85,11 +86,11 @@ header #menu_icon:hover{
 @keyframes close_menu{
     from{
         opacity: 1;
-        transform:rotateX(0deg);
+        transform:scale(1);
     }
     to{
         opacity: 0;
-        transform:rotateX(90deg);
+        transform:scale(0.8);
     }
 }
 header #menu{
@@ -99,11 +100,12 @@ header #menu{
     display:flex;
     flex-direction: column;
 
-    transform-origin:bottom center;
-    transform:rotateX(90deg);
+    /* transform-origin:bottom center; */
+    /* transform:rotateX(90deg); */
+    transform: scale(0.8);
     
     animation-name:close_menu;
-    animation-duration:0.5s;
+    animation-duration:0.3s;
 
     /* transition:transform 0.3s 0.6s, opacity 0.3s; */
 }
@@ -112,6 +114,7 @@ header #menu #middle{
     height:100%;
     display:flex;
     flex-direction: column;
+    gap:50px;
 
     align-items:center;
     justify-content: center;
@@ -155,6 +158,7 @@ header #two_player label{
 header #two_player #label_2p{
     flex-grow: 1;
     text-align: left;
+    font-size: 18px;
     line-height: 22px;
 }
 header #two_player #two_player_mode{
@@ -220,39 +224,40 @@ header.open_menu{
     transition:height 0.3s;
 }
 header.open_menu #menu_icon #line1{
-    top:26%;
-    transform: rotateZ(45deg);
-    transition:transform 0.5s 0.3s, top 0.2s 0.3s;
+    /* background:red; */
+    transform: translateY(6px) rotateZ(45deg);
+    transition:transform 0.5s 0.3s;
 }
 header.open_menu #menu_icon #line2{
     opacity: 0;
     width: 0;
-    transform:opacity 0.3s, width 0.3s
+    transition:opacity 0.3s 0.2s, width 0.3s 0.1s;
 }
 header.open_menu #menu_icon #line3{
-    top:-26%;
-    transform: rotateZ(-45deg);
-    transition:transform 0.5s 0.3s, top 0.2s 0.3s;
+    transform: translateY(-6px) rotateZ(-45deg);
+    transition:transform 0.5s 0.3s;
 }
 /*****/
 
 @keyframes open_menu{
     from{
-        transform:rotateX(90deg);
-    }
-    60%{
         opacity: 0;
-        transform:rotateX(90deg);
+        transform:scale(0.8);
+        background-color:rgba(255,255,255,0.6);
+    }
+    40%{
+        opacity: 0;
+        transform:scale(0.8);
         background-color:rgba(255,255,255,0.6);
     }
     to{
-        transform:rotateX(0deg);
+        transform:scale(1);
     }
 }
 header.open_menu #menu{
     animation-name:open_menu;
     animation-duration:0.5s;
-    transform:rotateX(0deg);
+    transform:scale(1);
     opacity:1;
 }
 /*---------*/
