@@ -228,8 +228,8 @@ tc.showChangePlayerName=function(){
     let player1Name=tc.player1.name;
     let player2Name=tc.player2Name;
     
-    document.querySelector("#menu #player1_name").innerText=player1Name;
-    document.querySelector("#menu #player2_name").innerText=player2Name;
+    document.querySelector("#gameboard #player1_name").innerText=player1Name;
+    document.querySelector("#gameboard #player2_name").innerText=player2Name;
     
     document.querySelector("#upper #player1 .name").innerText=this.player1.name;
     document.querySelector("#upper #player2 .name").innerText=this.player2.name;
@@ -241,20 +241,20 @@ tc.showChangedType=function (){
     if(tc.playType=="p2p"){
         document.getElementById("two_player_mode").checked=true;
 
-        document.querySelector("#menu #name2").style.display="block";
+        document.querySelector("#gameboard #name2").style.display="block";
 
-        document.querySelector("#menu #level").style.display="none";
+        document.querySelector("#gameboard #level").style.display="none";
     }else{
         document.getElementById("two_player_mode").checked=false;
 
-        document.querySelector("#menu #name2").style.display="none";
+        document.querySelector("#gameboard #name2").style.display="none";
 
-        document.querySelector("#menu #level").style.display="block";
+        document.querySelector("#gameboard #level").style.display="block";
     }
 }
 
 tc.showComputerLevel=function (){
-    document.querySelector("#menu #level #"+tc.computerLevel.trim()).checked=true;
+    document.querySelector("#gameboard #level #"+tc.computerLevel.trim()).checked=true;
 }
 
 function press(cell){
@@ -293,17 +293,6 @@ function changePlayerName(obj){
     }
 }
 
-let boolMenu=false;
-function showMenu(){
-
-    if(!boolMenu){
-        document.querySelector("header").classList.add("open_menu");
-    }else{
-        document.querySelector("header").classList.remove("open_menu");
-    }
-    boolMenu=!boolMenu;    
-    // alert(boolMenu);
-}
 
 function init(){
     tc.showChangePlayerName();

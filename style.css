@@ -9,108 +9,8 @@ body{
     font-family: sans-serif;
     outline:none;
 }
-header{
-    position: fixed;
+#menu_slot{
     width:100%;
-    height:40px;
-    display: flex;
-
-    color: white;
-    background-color: rgb(3, 61, 95);
-    background-image: linear-gradient(-10deg, rgb(0, 110, 255), rgb(3, 61, 95));
-    box-shadow: rgba(0,0,0,0.4) 0 1px 3px;
-
-    flex-direction: column;
-    z-index:500;
-    overflow: hidden;
-    transition:height 0.3s 0.3s;
-
-    perspective:100px;
-    perspective-origin: bottom center;
-}
-header *{
-    color: white; 
-}
-
-header #nav{
-    display:flex;
-    height:40px;
-    flex-direction: row;
-}
-header>div{
-    line-height:40px;
-    cursor: default;
-}
-header #title{
-    flex-grow:1;
-    margin-left: 15px;
-}
-
-/*============================*/
-
-header #menu_icon{
-    flex-grow:0;
-    width:40px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:4px;
-
-    transition:background-color 0.2s;
-}
-
-/*++++*/
-
-header #menu_icon .line{
-    position: relative;
-    top:0;
-    width:60%;
-    height:2px;
-    background-color: rgb(255, 255, 255);
-    transform-origin: center center;
-    transition: transform 0.2s 0.3s, top 0.5s 0.3s, opacity 0.5s 0.3s, width 0.5s 0.3s;
-}
-
-/*++++*/
-
-
-header #menu_icon:hover{
-    background-color: rgba(199, 223, 255, 0.5);
-}
-
-
-/*===========================*/
-
-@keyframes close_menu{
-    from{
-        opacity: 1;
-        transform:scale(1);
-    }
-    to{
-        opacity: 0;
-        transform:scale(0.8);
-    }
-}
-header #menu{
-    height:100%;
-    overflow: hidden;
-    opacity:0;
-    display:flex;
-    flex-direction: column;
-
-    /* transform-origin:bottom center; */
-    /* transform:rotateX(90deg); */
-    transform: scale(0.8);
-    
-    animation-name:close_menu;
-    animation-duration:0.3s;
-
-    /* transition:transform 0.3s 0.6s, opacity 0.3s; */
-}
-
-header #menu #middle{
     height:100%;
     display:flex;
     flex-direction: column;
@@ -119,19 +19,18 @@ header #menu #middle{
     align-items:center;
     justify-content: center;
 }
-
-header .menu_item{
+#gameboard .menu_item{
     width:60%;
     text-align:center;
 }
-header .label{
+#gameboard .label{
     letter-spacing: 1px;
     font-size:18px;
 }
 #name1, #name2, #level{
     height:84px;
 }
-header .textbox{
+#gameboard .textbox{
     line-height:40px;
     height:40px;
     padding:0px 8px;
@@ -141,27 +40,27 @@ header .textbox{
     overflow: hidden;
     transition: border 0.3s;
 }
-header .textbox br{
+#gameboard .textbox br{
     display: none;
 }
-header .textbox:focus{
+#gameboard .textbox:focus{
     border-color: white;
 }
 /*-----*/
-header #two_player{
+#gameboard #two_player{
     margin-top: 20px;
 }
-header #two_player label{
+#gameboard #two_player label{
     display: flex;
     flex-direction: row;
 }
-header #two_player #label_2p{
+#gameboard #two_player #label_2p{
     flex-grow: 1;
     text-align: left;
     font-size: 18px;
     line-height: 22px;
 }
-header #two_player #two_player_mode{
+#gameboard #two_player #two_player_mode{
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -172,7 +71,7 @@ header #two_player #two_player_mode{
     border: 1px solid white;
     border-radius: 100px;
 }
-header #two_player #two_player_mode::after{
+#gameboard #two_player #two_player_mode::after{
     content: '';
     position: absolute;
     background-color: rgba(255,255,255,0.5);
@@ -186,12 +85,12 @@ header #two_player #two_player_mode::after{
     transition: left 0.2s, background 0.2s;
 }
 
-header #two_player #two_player_mode:checked::after{
+#gameboard #two_player #two_player_mode:checked::after{
     left:17px;
     background-color: white;
 }
 /*-----------*/
-header #mode_box{
+#gameboard #mode_box{
     display: flex;
     flex-flow: row;
     border:1px solid white;
@@ -201,76 +100,21 @@ header #mode_box{
     padding:5px;
 }
 
-header #level .label_text{
+#gameboard #level .label_text{
     flex-grow:1;
 }
-header #level .mode_text{
+#gameboard #level .mode_text{
     line-height:32px;
     border-radius: 100px;
     transition:background 0.2s;
 }
-header #level .game_level{
+#gameboard #level .game_level{
     -webkit-appearance: none;
     -moz-appearance: none;
     display: none;
 }
-header #level .game_level:checked + .mode_text{
+#gameboard #level .game_level:checked + .mode_text{
     background-color: rgba(255,255,255,0.3);
-}
-/*++++++++++++++++++++++++*/
-/*----*/
-header.open_menu{
-    height:100%;
-    transition:height 0.3s;
-}
-header.open_menu #menu_icon #line1{
-    /* background:red; */
-    transform: translateY(6px) rotateZ(45deg);
-    transition:transform 0.5s 0.3s;
-}
-header.open_menu #menu_icon #line2{
-    opacity: 0;
-    width: 0;
-    transition:opacity 0.3s 0.2s, width 0.3s 0.1s;
-}
-header.open_menu #menu_icon #line3{
-    transform: translateY(-6px) rotateZ(-45deg);
-    transition:transform 0.5s 0.3s;
-}
-/*****/
-
-@keyframes open_menu{
-    from{
-        opacity: 0;
-        transform:scale(0.8);
-        background-color:rgba(255,255,255,0.6);
-    }
-    40%{
-        opacity: 0;
-        transform:scale(0.8);
-        background-color:rgba(255,255,255,0.6);
-    }
-    to{
-        transform:scale(1);
-    }
-}
-header.open_menu #menu{
-    animation-name:open_menu;
-    animation-duration:0.5s;
-    transform:scale(1);
-    opacity:1;
-}
-/*---------*/
-
-
-/*--------*/
-
-
-header #menu #bottom{
-    display:flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
 }
 
 
@@ -279,21 +123,13 @@ header #menu #bottom{
 Section
 */
 
-section{
-    display:flex;
-    align-items: center;
-    justify-content:center;
-    flex-direction: column;
-    height:100%;
-    
-}
 /*************************************/
-section #upper{
+#gameboard #upper{
     display: flex;
     width:252px;
     margin-bottom: 30px;
 }
-section #upper .player{
+#gameboard #upper .player{
     display: flex;
     flex-direction: column;
     text-align:center;
@@ -306,7 +142,7 @@ section #upper .player{
     overflow:hidden;
     transition: background 0.3s, color 0.3s;
 }
-section #upper .name{
+#gameboard #upper .name{
     height:18px;
     background-color: #f9f9f9;
     padding:3px 2px;
@@ -315,17 +151,17 @@ section #upper .name{
     text-overflow: ellipsis;
     transition: background 0.3s, color 0.3s;
 }
-section #upper .board{
+#gameboard #upper .board{
     display: flex;
     overflow:hidden;
 }
-section #upper .sign{
+#gameboard #upper .sign{
     flex-basis:0px;
     flex-grow: 1;
     padding:3px 0;
     transition: background 0.3s, color 0.3s;
 }
-section #upper .score{
+#gameboard #upper .score{
     flex-basis:0px;
     flex-grow: 1;
     padding:3px 0;
@@ -351,7 +187,7 @@ section #upper .score{
     }
 }
 
-section #upper .score.change{
+gameboard #upper .score.change{
     animation-name:score_change;
     animation-duration:0.5s;
     animation-timing-function: ease-in-out;
@@ -359,7 +195,7 @@ section #upper .score.change{
 
 
 /*-------------*/
-section #upper #alter{
+#gameboard #upper #alter{
     align-self:flex-end;
     margin:0 8px;
     width:30px;
@@ -373,42 +209,42 @@ section #upper #alter{
     
     transition:background-color 0.3s;
 }
-section #upper #alter:hover{
+#gameboard #upper #alter:hover{
     background-color:rgb(233, 233, 233);
 }
 
 
 
 /******/
-section>div{
+#gameboard>div{
     /* background:pink; */
 }
 /*--------------*/
 
-section #upper #player1 .name{
+#gameboard #upper #player1 .name{
     border-radius:5px 5px 5px 0;
 }
-section #upper #player2 .name{
+#gameboard #upper #player2 .name{
     border-radius:5px 5px 0 5px;
 }
 
 /*---*/
-section #upper .player.active{
+#gameboard #upper .player.active{
     background-color:#0087a5;
     box-shadow:rgb(0,0,0) 2px 2px 5px;
     background-image: linear-gradient(180deg,#00d8a2,#00a2c7 80%);
     background-origin: border-box;
 }
-section #upper .player.active .name{
+#gameboard #upper .player.active .name{
     /* background-color: #e9fbff; */
     background-color: #e9fbff;
 }
-section #upper .player.active .score{
+#gameboard #upper .player.active .score{
     /* background-color: rgb(0, 182, 223); */
     background-color:rgba(0, 63, 99, 0.45);
     color:white;
 }
-section #upper .player.active .sign{
+#gameboard #upper .player.active .sign{
     color:white;
 }
 
@@ -472,41 +308,41 @@ section #upper .player.active .sign{
     }
 }
 
-section #upper #player1 .sign.turn_x{
+#gameboard #upper #player1 .sign.turn_x{
     animation-name:sign_ani_1_x;
     animation-duration:0.3s;
 }
-section #upper #player1 .sign.turn_o{
+#gameboard #upper #player1 .sign.turn_o{
     animation-name:sign_ani_1_o;
     animation-duration:0.3s;
 }
-section #upper #player2 .sign.turn_x{
+#gameboard #upper #player2 .sign.turn_x{
     animation-name:sign_ani_2_x;
     animation-duration:0.3s;
 }
-section #upper #player2 .sign.turn_o{
+#gameboard #upper #player2 .sign.turn_o{
     animation-name:sign_ani_2_o;
     animation-duration:0.3s;
 }
 /********************************************/
 /*--------------------------*/
-section #middle{
+#gameboard #middle{
     position:relative;
 }
-section #table{
+#gameboard #table{
     /* position:relative; */
     /*transform:scale(0); */
     transition:transform 0.3s;
     border-collapse: collapse;
 }
 
-section td{
+#gameboard td{
     border:none;
     width:80px;
     height:80px;
     
 }
-section .innerCell{
+#gameboard .innerCell{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -587,34 +423,34 @@ section .innerCell{
 
 /* lines --------------------*/
 
-section #middle .line_stroke{
+#gameboard #middle .line_stroke{
     position: absolute;
     background-color: black;
     border-radius:10px;
 }
 
-section #middle #mV0{
+#gameboard #middle #mV0{
     left:calc(100% / 3 - 2px);
     top:0;
     width:4px;
     height: 100%;
 }
 
-section #middle #mV1{
+#gameboard #middle #mV1{
     left:calc(100% * 2 / 3 - 2px);
     top:0;
     width:4px;
     height: 100%;
 }
 
-section #middle #mH0{
+#gameboard #middle #mH0{
     left:0;
     top:calc(100% / 3 - 2px);
     width:100%;
     height: 4px;
 }
 
-section #middle #mH1{
+#gameboard #middle #mH1{
     left:0;
     top:calc(100% * 2 / 3 - 2px);
     width:100%;
@@ -623,7 +459,7 @@ section #middle #mH1{
 /*------*/
 
 /*-------------------------------------*/
-section #middle #lower{
+#gameboard #middle #lower{
     position: absolute;
     display:flex;
     left:10%;
@@ -648,13 +484,15 @@ section #middle #lower{
 
     transition: transform 0.3s;
 }
-section #middle #lower.active{
+#gameboard #middle #lower.active{
     transform: scale(1,1);
     transition: transform 0.3s 0.5s;
 }
 /*--------------------*/
 #lower_fixed{
     margin-top:30px;
+    display: flex;
+    justify-content: center;
 }
 #lower_fixed div{
     width:70px;
@@ -678,39 +516,6 @@ section #middle #lower.active{
     text-decoration: none;
 }
 
-/*-------------
-footer
-*/
 
-footer{
-    display: flex;
-    position: fixed;
-    width:100%;
-    bottom: 0;
-    color: #999999;
-    margin-bottom: 5px;
-    flex-direction: row;
-    justify-content: center;
-}
-footer #year{
-    margin-left: 5px;
-    border-left: 1px solid #dd006f;
-    padding-left: 5px;
-}
 
-/*---------about--------*/
-section#logo #img{
-    height:200px;
-}
-#about_name{
-    font-size: 25px;
-}
-#about_version{
-    font-size: 12px;
-}
-#about_det{
-    text-align: left;
-    margin:10px;
-    margin-top:20px;
-}
 
