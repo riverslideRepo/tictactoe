@@ -68,126 +68,128 @@
             </div>
         </div>
         <div slot="mainBoard">
-            <div id="upper">
-                <div id="player1" class="player">
-                    <div class="name">Player1</div>
-                    <div class="board">
-                        <div class="score">0</div>
-                        <div class="sign">X</div>
+            <div id="main">
+                <div id="upper">
+                    <div id="player1" class="player">
+                        <div class="name">Player1</div>
+                        <div class="board">
+                            <div class="score">0</div>
+                            <div class="sign">X</div>
+                        </div>
+                    </div>
+        
+                    <div id="alter" onclick="changeSign()"> </div>
+        
+                    <div id="player2" class="player">
+                        <div class="name">Player2</div>
+                        <div class="board">
+                            <div class="sign">O</div>
+                            <div class="score">0</div>
+                        </div>
                     </div>
                 </div>
-    
-                <div id="alter" onclick="changeSign()"> </div>
-    
-                <div id="player2" class="player">
-                    <div class="name">Player2</div>
-                    <div class="board">
-                        <div class="sign">O</div>
-                        <div class="score">0</div>
-                    </div>
-                </div>
-            </div>
-            <div id="middle">
-                <table id="table">
-                    <tr>
-                        <td id="c0_0" onclick="press([0,0])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-    
-                            </div>
-                        </td>
-    
-                        <td id="c0_1" onclick="press([0,1])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                        <td id="c0_2" onclick="press([0,2])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                    </tr>
-    
-                    <tr>
-                        <td id="c1_0" onclick="press([1,0])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                        <td id="c1_1" onclick="press([1,1])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                        <td id="c1_2" onclick="press([1,2])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                    </tr>
-    
-                    <tr>
-                        <td id="c2_0" onclick="press([2,0])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                        <td id="c2_1" onclick="press([2,1])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                        <td id="c2_2" onclick="press([2,2])">
-                            <div class="innerCell">
-                                <div class="signCircle"></div>
-                                <div class="signCrossDiag1"></div>
-                                <div class="signCrossDiag2"></div>
-                            </div>
-                        </td>
-    
-                    </tr>
+                <div id="middle">
+                    <table id="table">
+                        <tr>
+                            <td id="c0_0" onclick="press([0,0])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+        
+                                </div>
+                            </td>
+        
+                            <td id="c0_1" onclick="press([0,1])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                            <td id="c0_2" onclick="press([0,2])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                        </tr>
+        
+                        <tr>
+                            <td id="c1_0" onclick="press([1,0])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                            <td id="c1_1" onclick="press([1,1])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                            <td id="c1_2" onclick="press([1,2])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                        </tr>
+        
+                        <tr>
+                            <td id="c2_0" onclick="press([2,0])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                            <td id="c2_1" onclick="press([2,1])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                            <td id="c2_2" onclick="press([2,2])">
+                                <div class="innerCell">
+                                    <div class="signCircle"></div>
+                                    <div class="signCrossDiag1"></div>
+                                    <div class="signCrossDiag2"></div>
+                                </div>
+                            </td>
+        
+                        </tr>
+                        
+                    </table>
+                    <div id="marker"></div>
+        
+                    <div id="mV0" class="line_stroke"></div>
+                    <div id="mV1" class="line_stroke"></div>
+                    <div id="mH0" class="line_stroke"></div>
+                    <div id="mH1" class="line_stroke"></div>
                     
-                </table>
-                <div id="marker"></div>
-    
-                <div id="mV0" class="line_stroke"></div>
-                <div id="mV1" class="line_stroke"></div>
-                <div id="mH0" class="line_stroke"></div>
-                <div id="mH1" class="line_stroke"></div>
-                
-                <div id="lower" onclick="restart()">
-                    Puddu Wins
+                    <div id="lower" onclick="restart()">
+                        Puddu Wins
+                    </div>
                 </div>
-            </div>
-            
-            <div id="lower_fixed">
-                <div onclick="restart()">Restart</div>
-            </div>
+                
+                <div id="lower_fixed">
+                    <div onclick="restart()">Restart</div>
+                </div>
 
+            </div>
         </div>
     </rs-gameboard>
 </body>
