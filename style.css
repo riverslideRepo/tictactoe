@@ -19,6 +19,10 @@ body{
     align-items:center;
     justify-content: center;
 }
+#gameboard #main{
+    width:fit-content;
+    margin: auto;
+}
 #gameboard .menu_item{
     width:60%;
     text-align:center;
